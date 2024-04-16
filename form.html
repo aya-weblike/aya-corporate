@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aya Corporate 応募フォーム</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+		<link rel="manifest" href="img/site.webmanifest">
+        <meta name="description" content="住宅メーカー Aya Corporate の新卒採用サイト">
+        
+        <!-- css -->
+        <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- js-->
+        <script src="https://kit.fontawesome.com/44a6871718.js" crossorigin="anonymous"></script>
+		<script src="js/script.js" defer></script>
+    </head>
+
+    <body class="page-form">
+        <!-- ヘッダー -->
+        <header>
+            <div class="wrap">
+                <h1 class="logo">
+                    <a href="index.html">
+                        Aya Corporate
+                    </a>
+                </h1>
+                <nav>
+                    <ul class="header-nav">
+                        <li><a class="menu-home" href="index.html">ホーム</a></li>
+                        <li><a class="menu-job" href="job.html">募集要項</a></li>
+                        <li><a class="current menu-form" href="form.html">応募</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <!-- メイン -->
+        <main class="main">
+            <section>
+                <h2 class="section-title title-center">応募フォーム</h2>
+                <p>下記の応募フォームに必要事項をご入力のうえ、送信してください。</p>
+            
+				<form method="post" action="">
+					<table>
+						<tr>
+							<th><label for="name">お名前</label></th>
+							<td><input type="text" name="name" id="name" placeholder="例：山田太郎" required></td>
+						</tr>
+
+						<tr>
+							<th><label for="name-kana">フリガナ</label></th>
+							<td><input type="text" name="name-kana" id="name-kana" placeholder="例：ヤマダタロウ" required></td>
+						</tr>
+
+						<tr>
+							<th><label for="email">メールアドレス</label></th>
+							<td><input type="email" name="email" id="email" placeholder="例：sample@example.com" required></td>
+						</tr>
+
+						<tr>
+							<th>希望勤務地</th>
+							<td>
+								<label>
+									<input type="checkbox" name="work" value="東京">
+									<span>東京</span>
+								</label>
+
+								<label>
+									<input type="checkbox" name="work" value="福岡">
+									<span>福岡</span>
+								</label>
+
+								<label>
+									<input type="checkbox" name="work" value="リモート勤務">
+									<span>リモート勤務</span>
+								</label>
+							</td>
+						</tr>
+
+						<tr>
+							<th><label for="situation">現在の状況</label></th>
+							<td>
+								<div class="select-box">
+									<select name="situation" id="situation">
+										<option value="会社に在籍中">会社に在籍中</option>
+										<option value="学生">学生</option>
+										<option value="休職中">休職中</option>
+									</select>
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<th><label for="pr">自己PR</label></th>
+							<td>
+								<textarea placeholder="例：これまでの経験や活かせる能力等を教えてください" name="pr" id="pr" required></textarea>
+								<p>400文字以内でご入力ください。</p>
+								<p>現在<span id="count">0</span>文字</p>
+							</td>
+						</tr>
+					</table>
+
+					<p class="text-center">
+						<label><input id="check" type="checkbox">「個人情報の取扱について」同意する</label>
+						<input type="submit" id="btn" class="btn btn-primary" value="送信する" disabled>
+					</p>
+				</form>
+			</section>
+        </main>
+
+        <!-- フッター -->
+        <footer>
+            <a href="form.html" class="btn btn-secondary">募集要項</a>
+            <ul class="footer-nav">
+                <li><a href="#">会社概要</a></li>
+                <li><a href="#">サービス内容</a></li>
+                <li><a href="#">スタッフブログ</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+            </ul>
+            <p><small>&copy;2024 Aya</small></p>
+        </footer>
+    </body>
+</html>

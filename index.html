@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aya Corporate Sample</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+		<link rel="manifest" href="img/site.webmanifest">
+        <meta name="description" content="住宅メーカー Aya Corporate の新卒採用サイト">
+        
+        <!-- css -->
+        <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">       
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Sawarabi+Mincho&display=swap" rel="stylesheet">       
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- js -->
+        <script src="https://kit.fontawesome.com/44a6871718.js" crossorigin="anonymous"></script>
+		<script src="js/script.js" defer></script>
+    </head>
+
+    <body>
+		<!-- ローディング画面 -->
+		<div id="loading">
+			<p>Loading...</p>
+			<div id="loading-screen"></div>
+		</div>
+
+        <!-- ヘッダー -->
+        <header>
+            <div class="wrap">
+                <h1 class="logo">
+                    <a href="index.html">Aya Corporate</a>
+                </h1>
+                <nav>
+                    <ul class="header-nav">
+                        <li><a class="current menu-home" href="index.html">ホーム</a></li>
+                        <li><a class="menu-job" href="job.html">募集要項</a></li>
+                        <li><a class="menu-form" href="form.html">応募</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <!-- メイン -->
+        <main>
+            <section class="home-hero wrap">
+                <h2>一緒に成長し続けよう</h2>
+                <p>
+                    <span class="intro">
+                        私たちと一緒に住まいの未来を作りませんか？仲間を募集しています。<br>
+                        居心地よく働ける場所を、きっと見つけられるはずです。
+                    </span>
+                </p>
+                <a href="job.html" class="btn btn-primary">募集要項を見る</a>
+            </section>
+
+            <section class="brown-bg fadein">
+                <div class="wrap content flex-reverse">
+                    <div class="content-text">
+                        <h2 class="section-title">福利厚生が充実している職場です</h2>
+                        <p>
+                            福利厚生の種類割合をグラフにしてみました。<br>
+                            様々な種類の福利厚生があります。
+                        </p>
+                    </div>
+                    <div class="home-chart">
+                        <div class="pie-chart"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="wrap content fadein">
+                <div class="content-text">
+                    <h2 class="section-title">社員満足度も年々増加傾向です</h2>
+                    <p>
+                        弊社では東京、福岡のオフィスの他、業種によってはリモート勤務も可能です。
+                        リモート勤務を活用している社員は全体の3分の2となり、年々増加しています。
+                        自由な環境で仕事に取り組めることも満足度に繋がっているようです。
+                    </p>
+                </div>
+                <div class="home-chart">
+                    <div class="bar-chart"></div>
+                    <p>社員満足度の推移</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- フッター -->
+        <footer>
+            <a href="job.html" class="btn btn-secondary">募集要項を見る</a>
+            <ul class="footer-nav">
+                <li><a href="#">会社概要</a></li>
+                <li><a href="#">サービス内容</a></li>
+                <li><a href="#">スタッフブログ</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+            </ul>
+            <p><small>&copy;2024 Aya</small></p>
+        </footer>
+
+        <!-- Chartist -->
+        <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+    </body>
+</html>

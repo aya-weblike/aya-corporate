@@ -1,0 +1,600 @@
+@charset "utf-8";
+
+/*-------------------------------------------
+COLORS
+-------------------------------------------*/
+:root{
+    --grey:#555;
+    --light-grey:#bbb;
+	--shadow: rgba(0,0,0,.2);
+    --white:#fff;
+	--bg-white:rgba(255,255,255,.8);
+    --beige:#d2b48c;
+    --light-beige:#f8f6f2;
+	--red:#f00;
+	--dark-green:#006400;
+    --green:#3cb371;
+	--light-green: #66cdaa;
+}
+
+/*-------------------------------------------
+共通部分
+-------------------------------------------*/
+html{
+    font-size: 100%;    
+}
+
+body{
+    color: var(--grey);
+    font-family: "Noto Serif JP", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+img{
+    vertical-align: bottom;
+}
+
+p,
+td{
+    line-height: 1.7;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+/* Layout */
+.wrap{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.main{
+    max-width: 900px;
+    width: 94%;
+    margin: 6.25rem auto;
+    padding: 3rem 2rem;
+    background: var(--white);
+    box-shadow: 0 0 6px var(--shadow);
+}
+
+.text-center{
+    text-align: center;
+}
+
+.fadein{
+	opacity: 0;
+}
+
+/* Button */
+.btn{
+    display: inline-block;
+    padding: 1.25rem 3.25rem;
+    font-size: 1.375rem;
+    text-align: center;
+    width: 100%;
+}
+
+.btn-primary{
+    background:var(--beige);
+}
+
+.btn-primary:hover{
+    background: var(--green);
+}
+
+.btn-secondary{
+    background: var(--green);
+}
+
+.btn-secondary:hover{
+    background:var(--white);
+}
+
+/* Heading */
+.section-title{
+    font-family: "Sawarabi Mincho", serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.section-title::after{
+    content: '';
+    display: block;
+    height: 5px;
+    width: 10rem;
+    background: var(--beige);
+    margin: 2rem 0 2.5rem;
+}
+
+.title-center{
+    text-align: center;
+}
+
+.title-center::after {
+    margin: 2.5rem auto;
+}
+
+/* Table */
+table{
+    margin: 3.5rem 0;
+    width: 100%;
+}
+
+th,
+td{
+    display: block;
+}
+
+th{
+    font-weight: normal;
+    background:var(--light-beige);
+    vertical-align: middle;
+    padding: 1rem;
+}
+
+td{
+    padding: .75rem 1rem 1.75rem;
+}
+
+/*-------------------------------------------
+LOADING
+-------------------------------------------*/
+#loading{
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--light-grey);
+	position: fixed;
+	z-index: 999;
+	display: grid;
+	place-items: center;
+}
+
+#loading-screen{
+	background-color: var(--green);
+	position: fixed;
+	inset: 0;
+	z-index: 998;
+	translate: 0 100vh;
+}
+
+#loading p{
+	font-size: 2rem;
+	font-family: "Sawarabi Mincho", serif;
+}
+
+/*-------------------------------------------
+HEADER
+-------------------------------------------*/
+header .wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.header-nav{
+    display: flex;
+}
+
+.header-nav li{
+    text-align: center;
+    font-size: .75em;
+}
+
+.header-nav a{
+    display: block;
+    padding: .5rem;
+    width: 4rem;
+}
+
+.header-nav a::before{
+    display: block;
+    margin-bottom: .25rem;
+    /* Font Awesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 1.25rem;
+}
+
+.menu-home::before{
+    content: '\f015';
+}
+
+.menu-job::before {
+    content: '\f0ca';
+}
+
+.menu-form::before {
+    content: '\f56e';
+}
+
+.main-nav .current {
+    background: var(--white);
+}
+
+/*-------------------------------------------
+INDEX.html
+-------------------------------------------*/
+.home-hero{
+    background:url('../img/bg-hero.jpg') no-repeat right top / 70vw auto ;
+    padding: 5.5rem 1rem 3rem;
+}
+
+.home-hero h2{
+    margin: 8vw 0 12vw;
+    padding: 1rem;
+    background: var(--bg-white);
+    font-family: "Sawarabi Mincho", serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
+.home-hero p{
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+}
+
+/* Contents */
+.brown-bg {
+    background: var(--white);
+}
+
+.content{
+    padding: 4rem 1rem;
+}
+
+.content-text{
+    margin-bottom: 2rem;
+}
+
+
+/*-------------------------------------------
+CHART
+-------------------------------------------*/
+.home-chart{
+    margin-left: 2vw;
+}
+
+.flex-reverse .home-chart{
+    margin: 0 2vw 0 0;
+}
+
+.home-chart img{
+    width: 100%;
+}
+
+.home-chart p{
+    text-align: center;
+}
+
+/* グラフの文字 */
+.ct-label {
+    font-size: 1rem;
+    font-weight: bold;
+    fill: var(--white);
+}
+
+/* 円グラフ */
+.ct-series-a .ct-slice-pie {
+    fill: var(--dark-green);
+}
+.ct-series-b .ct-slice-pie {
+    fill: var(--green);
+}
+.ct-series-c .ct-slice-pie {
+    fill: var(--light-green);
+}
+.ct-series-d .ct-slice-pie {
+    fill: var(--light-grey);
+}
+
+/* 棒グラフ */
+.ct-series-a .ct-bar {
+    stroke: var(--green);
+}
+.ct-bar {
+    stroke-width: 15%;
+}
+
+/*-------------------------------------------
+JOB.html
+-------------------------------------------*/
+.page-job{
+    background-image: url(../img/bg-job.jpg);
+    background-position: left 106px, 0 0;
+    background-size: 70vw auto, contain;
+    background-repeat: no-repeat;
+}
+
+.page-job .btn{
+    margin-bottom: 4rem;
+}
+
+/* Timeline */
+.timeline{
+    list-style: decimal inside;
+}
+
+.timeline-item{
+    margin-bottom: 2rem;
+	opacity: 0;
+}
+
+.timeline-title{
+    font-size: 1.375rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+
+/*-------------------------------------------
+FORM.html
+-------------------------------------------*/
+.page-form{
+    background-image: url(../img/bg-form.jpg);
+    background-position: right 106px, 0 0;
+    background-size: 70vw auto, contain;
+    background-repeat: no-repeat;
+}
+
+/* Form */
+input[type='text'],
+input[type='email'],
+select,
+textarea{
+    border: 1px solid var(--light-grey);
+    background: var(--white);
+    padding: .5rem;
+    width: 100%;
+}
+
+input[type='text']::placeholder,
+input[type='email']::placeholder,
+textarea::placeholder{
+    color: var(--light-grey);
+}
+
+textarea{
+    height: 10rem;
+}
+
+label{
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.select-box{
+    position: relative;
+}
+
+.select-box::after{
+    display: inline-block;
+    position: absolute;
+    top:.625rem;
+    right: 1rem;
+
+    /* Font Awesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    content: '\f078';
+    color: var(--light-grey);
+}
+
+.alert{
+	color: var(--red);
+}
+
+#btn:disabled{
+	background: var(--light-grey);
+}
+
+
+
+/*-------------------------------------------
+FOOTER
+-------------------------------------------*/
+footer{
+    background:var(--beige);
+    padding: 3.5rem 1rem;
+    text-align: center;
+}
+
+footer .btn{
+    margin-bottom: 3.5rem;
+}
+
+.footer-nav li{
+    margin: 1rem 0;
+}
+
+
+/*-------------------------------------------
+レスポンシブ
+-------------------------------------------*/
+@media (min-width: 600px) {
+    /* 600px以上に適用されるCSS（デスクトップ用） */
+
+/* 共通 */
+    .main{
+        padding: 5rem;
+    }
+
+    .btn{
+        width: auto;
+    }
+
+    .section-title{
+        font-size: 1.875rem;
+    }
+
+/* Table */
+    tr:nth-child(odd){
+        background: var(--light-beige);
+    }
+
+    tr:nth-child(even) th{
+        background: var(--white);
+    }
+
+    th,
+    td{
+        padding: 1.25rem;
+        display: table-cell;
+    }
+
+    th{
+        width: 24%;
+        vertical-align: middle;
+    }
+
+    td{
+        width: 76%;
+    }
+
+
+/* HEADER */
+    header .wrap{
+        padding: 2rem 1rem;
+    }
+
+    .logo{
+        font-size: 1.3rem;
+    }
+
+    .header-nav li{
+        margin-left: 2rem;
+        font-size: 1.25rem;
+    }
+
+    .header-nav a{
+        width: auto;
+    }
+    .header-nav a:hover,
+    .header-nav .current{
+        border-bottom: 2px solid var(--green);
+        padding-bottom: .5rem;
+        background: none;
+    }
+
+    .header-nav a::before{
+        content: '';
+    }
+
+
+/* MAIN */
+    .home-hero{
+        padding: 16vw 1rem;
+    }
+
+    .home-hero h2{
+        font-size: 2.5rem;
+        margin: 0 0 2rem;
+        padding: 0;
+    }
+
+    .home-hero .intro{
+        background: var(--bg-white);
+    }
+
+/* Contents */
+    .content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4rem 1rem;
+    }
+
+    .flex-reverse{
+        flex-direction: row-reverse;
+    }
+
+    .content-text{
+        width: 50vw;
+        margin-bottom: 0;
+    }
+
+    .home-chart{
+        width: 34vw;
+    }
+
+/* Timeline */
+    .timeline-item{
+        display: flex;
+        margin-bottom: 0;
+    }
+
+    .timeline-title{
+        width: 24%;
+        padding: 2rem 2.5rem 2rem 0;
+        text-align: right;
+    }
+
+    .timeline-content{
+        width: 76%;
+        border-left: 5px solid var(--beige);
+        padding: 1.5rem 0 1.5rem 2.5rem;
+        position: relative;
+    }
+
+    .timeline-content::before{
+        display: block;
+        width: 2.25rem;
+        height: 2.25rem;
+        background: var(--beige);
+        text-align: center;
+        padding: .1rem;
+        position: absolute;
+        top: 1.5rem;
+        left: -1.5rem;
+        /* Font Awesome */
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        color: var(--white);
+        font-size: 1.25rem;
+    }
+
+    .icon-file::before{
+        content: '\f56e';
+    }
+
+    .icon-pc::before{
+        content: '\f109';
+    }
+
+    .icon-chat::before{
+        content: '\f086';
+    }
+    .icon-hands::before{
+        content: '\f2b5';
+    }
+
+/* FORM */
+    .select-box{
+        width: 40%;
+    }
+
+/* FOOTER */
+    .footer-nav{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3.5rem;
+    }
+
+    .footer-nav li{
+        margin: 0 .75rem;
+    }
+
+    .footer-nav a:hover{
+        color: var(--white);
+    }
+}
+
+
+
