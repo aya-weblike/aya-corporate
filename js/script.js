@@ -44,7 +44,7 @@ let file = paths[paths.length-1]; // 最後の要素を取得する
 // 検索対象の文字列
 let subject = file;
 
-if (subject.indexOf('job') !== -1) {
+if (subject.indexOf('job')>=0) {
 	// URLに'job'が含まれている時（募集要項のページ）
 	//監視対象が範囲内に現れたら実行する動作
 	const timeLineFade = (shows,obs) =>{
@@ -81,7 +81,7 @@ if (subject.indexOf('job') !== -1) {
 	const timeLineElement = document.querySelector('.timeline');
 	timeLineObserver.observe(timeLineElement);
 
-}else if(subject.indexOf('form') !== -1){
+}else if(subject.indexOf('form')>=0){
 	// URLに'form'が含まれている時（応募のページ）
 	// 文字数のカウント
 	const text = document.querySelector('#pr');
